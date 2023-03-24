@@ -1,0 +1,45 @@
+# see https://docs.searxng.org/admin/engines/settings.html#use-default-settings
+use_default_settings: 
+  engines:
+    keep_only:
+      - google
+      - duckduckgo
+  name: nniSEARCH
+server:
+  # base_url is defined in the SEARXNG_BASE_URL environment variable, see .env and docker-compose.yml
+  secret_key: "RXqcBgZHecw6pyuletC3DN97+zORH3M51T6PD+HMjgyY"  # change this!
+  limiter: true  # can be disabled for a private instance
+  image_proxy: true
+  method: "GET"
+ui:
+  default_theme: simple
+  theme_args:
+    simple_style: dark
+  static_use_hash: true
+  infinite_scroll: true
+  center_alignment: false
+  results_on_new_tab: true
+redis:
+  url: redis://redis:6379/0
+general:
+  debug: false
+  instance_name:  "nniSEARCH"
+  privacypolicy_url: false
+  donation_url: false
+  contact_url: false
+  enable_metrics: true
+search:
+  safe_search: 0
+  autocomplete: "google"
+  default_lang: ""
+  ban_time_on_fail: 5
+  max_ban_time_on_fail: 120
+  suspended_times:
+    SearxEngineAccessDenied: 86400
+    SearxEngineCaptcha: 86400
+    SearxEngineTooManyRequests: 3600
+    cf_SearxEngineCaptcha: 1296000
+    cf_SearxEngineAccessDenied: 86400
+    recaptcha_SearxEngineCaptcha: 604800
+  formats:
+    - html
