@@ -11,8 +11,8 @@ services:
       - caddy-data:/data:rw
       - caddy-config:/config:rw
     environment:
-      - SEARXNG_HOSTNAME=search.nnisarg.xyz
-      - SEARXNG_TLS=gadannisarg@gmail.com
+      - SEARXNG_HOSTNAME=search.nnisarg.in
+      - SEARXNG_TLS=contact@nnisarg.in
     cap_drop:
       - ALL
     cap_add:
@@ -46,7 +46,7 @@ services:
         source: ./searxng.png
         target: /usr/local/searxng/searx/static/themes/simple/img/searxng.png
     environment:
-      - SEARXNG_BASE_URL=https://search.nnisarg.xyz/
+      - SEARXNG_BASE_URL=https://search.nnisarg.in/
     cap_drop:
       - ALL
     cap_add:
